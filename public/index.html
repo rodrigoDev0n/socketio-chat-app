@@ -40,7 +40,13 @@
         integrity="sha512-YeeA/Qxn5hYdkukScTCNNOhTrv1C2RubAGButJ1rmgQwZf/HdRaCGl+JAVkqsqaNRaYNHdheiuKKuPf9mDcqKg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const socket = io('https://socketio-chat-app-eight.vercel.app/');
+        const socket = io('https://socketio-chat-app-eight.vercel.app/', {
+            cors: {
+                origin: 'https://socketio-chat-app-eight.vercel.app/',
+                credentials: true
+            },
+            transports: ['websockets']
+        });
 
         // Referencias
         const form = document.querySelector('#formulario');
