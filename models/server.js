@@ -2,12 +2,7 @@
 const express = require('express');
 const http = require('http');
 
-const socketio = require("socket.io")(httpServer, {
-    cors: {
-        origin: "https://socketio-chat-lmely59mn-rodrigodev0n.vercel.app/",
-        methods: ["GET", "POST"]
-    }
-});
+const socketio = require("socket.io");
 
 const path = require('path');
 const Sockets = require('./sockets');
