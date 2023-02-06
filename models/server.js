@@ -1,7 +1,14 @@
 
 const express = require('express');
 const http = require('http');
-const socketio = require('socket.io');
+
+const socketio = require("socket.io")(httpServer, {
+    cors: {
+        origin: "https://socketio-chat-lmely59mn-rodrigodev0n.vercel.app/",
+        methods: ["GET", "POST"]
+    }
+});
+
 const path = require('path');
 const Sockets = require('./sockets');
 
@@ -14,12 +21,12 @@ class Server {
         this.server = http.createServer(this.app);
 
         //Configuración de socket
-        this.io = socketio(this.server, {/* Configuraciones */}); 
+        this.io = socketio(this.server, {/* Configuraciones */ });
     }
 
     middlewares() {
         // Desplegar el directorio publico:
-        this.app.use( express.static(path.resolve(__dirname, '../public')));
+        this.app.use(express.static(path.resolve(__dirname, '../public')));
     }
 
     socketsConfig() {
