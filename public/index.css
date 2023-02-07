@@ -30,3 +30,24 @@ h1 {
     height: 50px;
     color: white;
 }
+
+.custom-text {
+    font-weight: bold;
+    color: #9F9F9F;
+}
+
+.animate {
+    animation: campana .2s ease-in infinite;
+}
+
+@keyframes campana {
+    0% {
+        margin: 0px;
+    }
+    50% {
+        margin-left: 3px;
+    }
+    100% {
+        margin: 0px;
+    }
+}
