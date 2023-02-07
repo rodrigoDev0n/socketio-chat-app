@@ -1,6 +1,6 @@
 
-// const socket = io('https://socketio-chat-app-production.up.railway.app/');
-const socket = io('http://localhost:8080');
+ const socket = io('https://socketio-chat-app-production.up.railway.app/');
+// const socket = io('http://localhost:8080');
 
 // Referencias
 const form = document.querySelector('#formulario');
