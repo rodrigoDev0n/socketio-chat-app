@@ -32,8 +32,11 @@ h1 {
 }
 
 .custom-text {
+    padding-left: 2px;
     font-weight: bold;
     color: #9F9F9F;
+    text-align: center;
+    width: 100px;
 }
 
 .animate {
@@ -50,4 +53,11 @@ h1 {
     100% {
         margin: 0px;
     }
+}
+
+.custom-text-container {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

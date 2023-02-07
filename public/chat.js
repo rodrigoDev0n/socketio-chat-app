@@ -1,6 +1,6 @@
 
-const socket = io('https://socketio-chat-app-production.up.railway.app/');
-// const socket = io('http://localhost:8080');
+// const socket = io('https://socketio-chat-app-production.up.railway.app/');
+const socket = io('http://localhost:8080');
 
 // Referencias
 const form = document.querySelector('#formulario');
@@ -33,9 +33,9 @@ socket.on('mensaje-from-server', (data) => {
     entranceText.style.cssText = 'display: none';
     mensajes.innerHTML += ` 
     <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold customtext">${data.user}</div>
-            <span class="fw-bold customtext"> > </span>${data.text}
+        <div class="ms-2 me-auto custom-text-container">
+            <div class="fw-bold customtext">${data.user}<span class="fw-bold customtext"> > </span></div>
+            <span>${data.text}</span>
         </div>
     </li>`;
     users.innerHTML = ''; 
