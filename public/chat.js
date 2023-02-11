@@ -14,7 +14,9 @@ const sphere2 = document.querySelector('#sphere-2');
 const sphere3 = document.querySelector('#sphere-3');
 const sphere4 = document.querySelector('#sphere-4'); */
 
-const randomColors = [
+// TODO: Actualizar random colors
+
+/* const randomColors = [
     '#E73C7E',
     '#EE7752',
     '#6EDF16',
@@ -25,7 +27,7 @@ const randomColors = [
     '#D078EF',
     '#23D5AB',
     '#2B6DF1',
-]
+] */
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -46,6 +48,8 @@ form.addEventListener('submit', (event) => {
     txtmensaje.value = '';
 });
 
+//style='background-color: ${randomColors[Math.floor( randomColors.length * Math.random() )]}
+
 socket.on('mensaje-from-server', (data) => {
     entranceText.style.cssText = 'display: none';
     mensajes.innerHTML += ` 
@@ -53,7 +57,6 @@ socket.on('mensaje-from-server', (data) => {
     <li class="list-group-item d-flex justify-content-between align-items-start mt-2 p-2">
         <div 
             class="message_container" 
-            style='background-color: ${randomColors[Math.floor( randomColors.length * Math.random() )]}
         '>
             <span class="user_message">${data.text}</span>
         </div>
