@@ -7,7 +7,7 @@ h1 {
 }
 
 .customtext {
-    color: #6C917D;
+    color: #6c917d;
 }
 
 .custombtn {
@@ -39,17 +39,136 @@ h1 {
     width: 100px;
 }
 
+.writting-signal-container {
+    display: flex;
+    width: 100%;
+}
+
+.writting-signal {
+    font-weight: bold;
+    color: #9F9F9F;
+}
+
+.message_container {
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #b1e37b;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.radius-container {
+    padding: 10px;
+    width: 100%;
+}
+
+.user_message {
+    font-weight: bold;
+}
+
 .animate {
     animation: campana .2s ease-in infinite;
+}
+
+.custom_animation {
+    animation: appearmessage .9s ease-out;
+}
+
+.gradient-background {
+    height: 100px;
+    background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    font-size: 30px;
+}
+
+.custom_colors-container {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sphere {
+    background-color: #23D5AB;
+    margin: 5px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.color-1 {
+    background-color: #EE7752;
+}
+
+.color-2 {
+    background-color: #E73C7E;
+}
+
+.color-3 {
+    background-color: #23A6D5;
+}
+
+.color-4 {
+    background-color: #23D5AB;
+}
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes appearmessage {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 50%;
+    }
+
+    70% {
+        opacity: 80%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
 
 @keyframes campana {
     0% {
         margin: 0px;
     }
+
     50% {
         margin-left: 3px;
     }
+
     100% {
         margin: 0px;
     }
