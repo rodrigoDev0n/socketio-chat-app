@@ -1,4 +1,3 @@
-
 const socket = io('https://socketio-chat-app-production.up.railway.app/');
 // const socket = io('http://localhost:8080');
 
@@ -43,6 +42,8 @@ form.addEventListener('submit', (event) => {
         user: userName,
     });
 
+    socket.emit('user:message', 'red');
+
     txtUser.disabled = true;
     txtmensaje.focus();
     txtmensaje.value = '';
@@ -50,15 +51,19 @@ form.addEventListener('submit', (event) => {
 
 //style='background-color: ${randomColors[Math.floor( randomColors.length * Math.random() )]}
 
-socket.on('mensaje-from-server', (data) => {
+/* socket.on('user:message', (data) => {
+    const color = data;
+}) */
+
+socket.on('mensaje-from-server', (message) => {
     entranceText.style.cssText = 'display: none';
     mensajes.innerHTML += ` 
-    <div class="fw-bold customtext mt-2">${data.user}</div>
+    <div class="fw-bold customtext mt-2">${message.user}</div>
     <li class="list-group-item d-flex justify-content-between align-items-start mt-2 p-2">
         <div 
-            class="message_container" 
+            class="message_container"
         '>
-            <span class="user_message">${data.text}</span>
+            <span class="user_message">${message.text}</span>
         </div>
     </li>
     <hr />`;

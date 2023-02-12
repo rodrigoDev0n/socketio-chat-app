@@ -16,6 +16,11 @@ class Sockets {
             socket.on('user:typing', (data) => {
                 socket.broadcast.emit('user:typing', data);
             });
+
+            socket.on('user:message', (data) => {
+                console.log(data);
+                socket.broadcast.emit('use:message', data);
+            });
         });
     }
 }
